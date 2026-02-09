@@ -5,7 +5,7 @@ const buttons = document.getElementById("buttons");
 
 // Нажатие "Да"
 yesBtn.addEventListener("click", () => {
-  text.textContent = "И я буду твоей Валентинкой!";
+  text.textContent = "И я буду твоей Валентинкой!🥰";
   buttons.style.display = "none";
 });
 
