@@ -5,32 +5,44 @@
 
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   background: #ffd6e7;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+
+  /* отступы от краёв */
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 100px;
+  }
 }
 
 .container {
-  position: relative;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* 💖 Сердце */
+/* ❤️ Сердце */
 .heart {
   position: relative;
-  width: min(90vw, 500px);
-  height: min(80vh, 450px);
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1 / 0.9;
+
   background: white;
-  margin: auto;
   transform: rotate(-45deg);
   border-radius: 20px;
 }
 
-/* Круги сердца */
+/* половинки сердца */
 .heart::before,
 .heart::after {
   content: "";
@@ -39,7 +51,6 @@ body {
   height: 100%;
   background: white;
   border-radius: 50%;
-  z-index: 1;
 }
 
 .heart::before {
@@ -52,44 +63,59 @@ body {
   top: 0;
 }
 
-/* 📄 Текст и кнопки поверх сердца */
+/* контент поверх сердца */
 .heart p,
 .buttons {
   position: absolute;
   width: 100%;
+  left: 0;
+
   text-align: center;
   transform: rotate(45deg);
-  z-index: 5; /* 👈 важно */
+  z-index: 10;
 }
 
+/* текст по центру сердца */
 #heart-text {
-  top: 35%;
+  top: 45%;
+  transform: translateY(-50%) rotate(45deg);
+
   font-size: clamp(20px, 5vw, 28px);
   padding: 0 20px;
 }
 
+/* кнопки тоже по центру */
 .buttons {
-  top: 55%;
+  top: 60%;
+  transform: translateY(-50%) rotate(45deg);
+
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 24px;
 }
 
-/* 🔘 Кнопки */
+/* кнопки */
 button {
-  padding: 12px 26px;
+  padding: 12px 28px;
   font-size: 18px;
-  border: none;
   border-radius: 30px;
+  border: none;
   cursor: pointer;
+
+  /* важно для айфона */
+  appearance: none;
+  -webkit-appearance: none;
 }
 
+/* Да */
 #yesBtn {
   background: #ff4d88;
   color: white;
 }
 
+/* Нет — одинаково на ПК и iPhone */
 #noBtn {
   background: #ddd;
+  color: #000;
   position: relative;
 }
