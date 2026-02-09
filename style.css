@@ -77,7 +77,7 @@ body {
 
 /* текст по центру сердца */
 #heart-text {
-  top: 45%;
+  top: calc(45% - 50px);
   transform: translateY(-50%) rotate(45deg);
 
   font-size: clamp(20px, 5vw, 28px);
