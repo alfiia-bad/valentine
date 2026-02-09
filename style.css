@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: #ffd6e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+}
+
+.heart {
+  width: 500px;
+  height: 450px;
+  background: white;
+  position: relative;
+  transform: rotate(-45deg);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 500px;
+  height: 450px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -250px;
+  left: 0;
+}
+
+.heart::after {
+  left: 250px;
+  top: 0;
+}
+
+.heart p,
+.buttons {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  transform: rotate(45deg);
+}
+
+#heart-text {
+  top: 150px;
+  font-size: 26px;
+  padding: 0 30px;
+}
+
+.buttons {
+  top: 230px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+button {
+  padding: 12px 28px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background: #ff4d88;
+  color: white;
+}
+
+#noBtn {
+  background: #ddd;
+  position: relative;
+}
