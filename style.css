@@ -75,10 +75,10 @@ body {
   z-index: 10;
 }
 
-/* текст по центру сердца */
+/* текст по центру сердца, поднят на 50px */
 #heart-text {
-  top: calc(45% - 50px);
-  transform: translateY(-50%) rotate(45deg);
+  top: 45%;
+  transform: translateY(calc(-50% - 50px)) rotate(45deg);
 
   font-size: clamp(20px, 5vw, 28px);
   padding: 0 20px;
